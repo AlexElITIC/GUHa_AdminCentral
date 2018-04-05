@@ -1,0 +1,48 @@
+<div class="col s6">
+ <div class="card horizontal #b3e5fc light-blue lighten-4">
+   <div class="card-image small">
+     <h3 align="center">{{housing-unit.nombre}}</h3>
+     <img src="http://s03.s3c.es/imag/_v0/635x300/6/9/0/unidad-habitacional-635.jpg">
+
+   </div>
+   <div class="card-stacked">
+     <div class="card-content">
+       <table class="bordered">
+      <tbody>
+        <tr>
+          <td><b>Administrador(es):</b></td>
+          <td></td>
+          <td></td>
+        </tr>
+
+        <tr>
+          <td><b>Pais:</b></td>
+          <td>{{housing-unit.pais}}</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><b>Estado:</b></td>
+          <td>{{housing-unit.estado}}</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><b>Municipio:</b></td>
+          <td>{{housing-unit.municipio}}</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><b>Colonia:</b></td>
+          <td>{{housing-unit.colonia}}</td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+     </div>
+     <div class="card-action">
+       <a class="waves-effect waves-light btn #0091ea light-blue accent-4">Detalles</a>
+       <a class="waves-effect waves-light btn #0091ea light-blue accent-4">Editar</a>
+       <a class="btn-floating btn-large waves-effect waves-light red" {{action 'borrarUnidad' housing-unit}}><i class="material-icons">delete</i></a>
+     </div>
+   </div>
+ </div>
+</div>

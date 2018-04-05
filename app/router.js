@@ -7,6 +7,10 @@ const Router = EmberRouter.extend({
 });
 
 Router.map(function() {
+  this.route('crearAdmin');
+  this.route('crearUnidad');
+  this.route('listaAdmin');
+  this.route('inicio');
 });
 
 export default Router;

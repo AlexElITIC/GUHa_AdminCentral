@@ -1,0 +1,27 @@
+<div class="container">
+<div class="row">
+    <div class="col s12">
+      <div class="row">
+        <div class="input-field col s9">
+          <i class="material-icons prefix">search</i>
+          <input type="text" id="autocomplete-input" class="autocomplete">
+          <label for="autocomplete-input">Busqueda de unidad</label>
+        </div>
+        <div class="input-field col s3">
+<a class="waves-effect waves-light btn #0091ea light-blue accent-4"><i class="material-icons left">send</i>buscar</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="container">
+  {{#each listaUnidad as |unidad|}}
+  {{#if unidad.nombre}}
+  {{tarjeta-unidad housing-unit=unidad}}
+  {{/if}}
+  {{else}}
+  <h2>no hay registros :(</h2>
+  {{/each}}
+</div>

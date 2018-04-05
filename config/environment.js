@@ -10,6 +10,7 @@ module.exports = function(environment) {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
         // e.g. 'with-controller': true
+
       },
       EXTEND_PROTOTYPES: {
         // Prevent Ember Data from overriding Date.parse.
@@ -29,10 +30,31 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
+    ENV.firebase={
+      apiKey: "AIzaSyCImjD67U5oAmEI_aqeTRjVOuNzGr50ZxI",
+      authDomain: "guha-dev.firebaseapp.com",
+      databaseURL: "https://guha-dev.firebaseio.com",
+      projectId: "guha-dev",
+      storageBucket: "guha-dev.appspot.com",
+      messagingSenderId: "637932129887"
+    },
+    ENV['ember-google-maps'] = {
+  key: 'AIzaSyDJDgTus64NJBRupZGptXAeL3ku2g1rRD8', // Using .env files in this example
+  language: 'es',
+  region: 'MX',
+  protocol: 'http',
+  version: '3.31',
+  libraries: ['geometry', 'places']
+  // client: undefined,
+  // channel: undefined,
+  // baseUrl: '//maps.googleapis.com/maps/api/js'
+}
+
   }
 
   if (environment === 'test') {
     // Testem prefers this...
+
     ENV.locationType = 'none';
 
     // keep test console output quieter
