@@ -6,4 +6,12 @@ export default Controller.extend({
   listaUnidad: computed(function() {
 		return this.get('store').findAll('housing-unit')
 	}),
+  actions:{
+    goDetails(unit){
+      this.transitionToRoute('detalles',unit.get('id'))
+    },
+    edit(unit){
+      this.transitionToRoute('editar',unit.get('id'))
+    }
+  }
 });

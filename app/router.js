@@ -11,6 +11,8 @@ Router.map(function() {
   this.route('crearUnidad');
   this.route('listaAdmin');
   this.route('inicio');
+  this.route('detalles',{path:'/detalles/:id'});
+  this.route('editar',{path:'/editar/:housing-unit_id'});
 });
 
 export default Router;

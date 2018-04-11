@@ -9,6 +9,7 @@ export default DS.Model.extend({
     municipio: DS.attr('string'),
     colonia: DS.attr('string'),
     cp: DS.attr('string'),
+    fechaDeContrato: DS.attr('string'),
     colonos: DS.hasMany('settler'),
     administradores: DS.hasMany('administrator'),
 

@@ -19,7 +19,7 @@
 <div class="container">
   {{#each listaUnidad as |unidad|}}
   {{#if unidad.nombre}}
-  {{tarjeta-unidad housing-unit=unidad}}
+  {{tarjeta-unidad housing-unit=unidad goDetails=(action 'goDetails') edit=(action 'edit')}}
   {{/if}}
   {{else}}
   <h2>no hay registros :(</h2>

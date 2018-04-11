@@ -1,0 +1,46 @@
+{{outlet}}
+<body>
+    <div class="container">
+      <h2>{{model.nombre}}</h2>
+      <div class="row">
+        <div class="col s6">
+          {{#g-map lat=model.latitud lng=model.longitud
+            zoom=20 as |g|}}
+            {{g.marker
+      lat=model.latitud
+      lng=model.longitud
+            }}
+            {{/g-map}}
+        </div>
+      <div class="col s6" align="center">
+        <table class="striped">
+
+  <tbody>
+    <tr>
+      <td><b>Estado</b></td>
+      <td>{{model.estado}}</td>
+    </tr>
+    <tr>
+      <td><b>Municipio</b></td>
+      <td>{{model.municipio}}</td>
+    </tr>
+    <tr>
+      <td><b>Colonia</b></td>
+      <td>{{model.colonia}}</td>
+    </tr>
+    <tr>
+      <td><b>C.P.</b></td>
+      <td>{{model.cp}}</td>
+
+    </tr>
+    <tr>
+      <td><b>Fecha de contrato</b></td>
+      <td>{{model.fechaDeContrato}}</td>
+
+    </tr>
+  </tbody>
+</table>
+      </div>
+      </div>
+    </div>
+  </body>
