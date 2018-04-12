@@ -16,10 +16,11 @@
 </div>
 
 <div class="container">
+  {{log model}}
   <div class="row ">
-    {{#each listaAdmin as |admin|}}
+    {{#each model as |admin|}}
     {{#if admin.nombre}}
-    {{tarjeta-administrador administrator=admin}}
+    {{tarjeta-administrador administrator=admin edit=(action 'edit')}}
     {{/if}}
     {{else}}
     <h2>no hay registros :(</h2>

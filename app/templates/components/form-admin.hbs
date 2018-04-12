@@ -1,0 +1,53 @@
+<div class="row #b3e5fc light-blue lighten-4">
+  <div class="col s5">
+    <div class="row">
+
+    <form class="col s12">
+      <div class="row">
+        {{m-wrapper}}
+        <div class="input-field col s12">
+          {{input id="name" type="text" class="validate" value=model.nombre}}
+          <label for="name">Nombre</label>
+        </div>
+        <div class="input-field col s6">
+          {{input id="last_name" type="text" class="validate" value=model.apellidoPaterno}}
+          <label for="last_name">Apellido paterno</label>
+        </div>
+        <div class="input-field col s6">
+          {{input id="last_name1" type="text" class="validate" value=model.apellidoMaterno}}
+          <label for="last_name1">Apellido materno</label>
+        </div>
+        <div class="input-field col s12">
+          {{input id="direccion" type="text" class="validate" value=model.direccion}}
+          <label for="direccion">Direccion</label>
+        </div>
+        <div class="input-field col s12">
+          {{input id="telefono" type="text" class="validate" value=model.telefono}}
+          <label for="telefono">telefono</label>
+        </div>
+        <div class="input-field col s12">
+          {{input id="correo" type="text" class="validate" value=model.email}}
+          <label for="correo">correo</label>
+        </div>
+      </div>
+
+    </form>
+  </div>
+  </div>
+  <div class="container">
+  <div class="col s7">
+<img src="http://www.thepixelfarm.co.uk/wp-content/uploads/2016/05/admin_v01D_support.png" id="foto">
+   <form class="col s12" id="form">
+     <div class="row">
+       <div class="input-field col s6"><a class="waves-effect waves-light btn #0091ea light-blue accent-4">subir foto</a>
+       </div>
+       <div class="input-field col s6">
+      <a class="waves-effect waves-light btn #0091ea light-blue accent-4" {{action 'guardarAdmin' model}}><i class="material-icons right">send</i>guardar</a>
+       </div>
+     </div>
+   </form>
+
+    </div>
+
+  </div>
+</div>

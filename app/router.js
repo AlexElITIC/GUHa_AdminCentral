@@ -13,6 +13,7 @@ Router.map(function() {
   this.route('inicio');
   this.route('detalles',{path:'/detalles/:id'});
   this.route('editar',{path:'/editar/:housing-unit_id'});
+  this.route('editar-admin',{path:'/editar-admin/:administrator_id'});
 });
 
 export default Router;
