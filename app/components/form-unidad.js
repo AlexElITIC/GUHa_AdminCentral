@@ -1,6 +1,19 @@
 import Component from '@ember/component';
+import EmberObject, { computed } from '@ember/object';
+import FindQuery from 'ember-emberfire-find-query/mixins/find-query';
+import { inject as service } from "@ember/service";
+export default Component.extend(FindQuery, {
+  store: service(),
+  listaAdmin: computed(function() {
+    let administradoresList = [];
 
-export default Component.extend({
+			return this.get('store').findAll('administrator').then((administradores)=>{
+					administradores.forEach((administrator)=>{
+						administradoresList.pushObject(administrator)
+					})
+					return administradoresList;
+			})
+  }),
   actions:{
     probarCoordenadas(){
       var model = this.get('model');
@@ -12,11 +25,15 @@ export default Component.extend({
 
     },
     guardarUnidad(unidad){
+      console.log(this.get('selectedAdmin'))
+      
+      unidad.set('admin1',this.get('selectedAdmin'))
       unidad.save().then(()=>{
         this.set('latitud','');
         this.set('longitud','');
         this.sendAction('guardarUnidad',unidad)
       })
-    }
-  }
+    },
+
+}
 });

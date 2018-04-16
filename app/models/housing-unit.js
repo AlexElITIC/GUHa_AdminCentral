@@ -11,7 +11,7 @@ export default DS.Model.extend({
     cp: DS.attr('string'),
     fechaDeContrato: DS.attr('string'),
     colonos: DS.hasMany('settler'),
-    administradores: DS.hasMany('administrator'),
+    admin1: DS.belongsTo('administrator'),
 
     servicios: DS.hasMany('service'),
     gastos: DS.hasMany('spending'),

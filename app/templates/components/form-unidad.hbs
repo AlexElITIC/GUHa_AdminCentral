@@ -40,12 +40,24 @@
           </div>
   <div class="col s6">
     <div class="row">
-      <div class="input-field col s12">
+      <div class="input-field col s12" >
         <i class="material-icons prefix">person</i>
         <input type="text" id="admin2" class="autocomplete">
         <label for="admin2">Administrador 2</label>
       </div>
     </div>
+    {{#power-select
+  options=listaAdmin
+  placeholder="Please, select one destination"
+  selected=selectedAdmin
+    searchField="email"
+  onchange=(action (mut selectedAdmin))
+  as |admin|
+}}
+  {{admin.nombre}}
+  {{admin.apellidoPaterno}} {{admin.apellidoMaterno}}
+{{/power-select}}
+
   </div>
     </div>
   </form>
@@ -55,8 +67,13 @@
 <div class="col s7">
   <div id="map">
     {{#if model.latitud}}
-    {{g-map lat=model.latitud lng=model.longitud
-      zoom=30}}
+    {{#g-map lat=model.latitud lng=model.longitud
+      zoom=20 as |g|}}
+      {{g.marker
+lat=model.latitud
+lng=model.longitud
+      }}
+      {{/g-map}}
     {{else}}
       {{g-map lat='0' lng='0'
       zoom=10}}
