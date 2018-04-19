@@ -11,10 +11,14 @@
       <tbody>
         <tr>
           <td><b>Administrador(es):</b></td>
-          <td>{{housing-unit.admin1.nombre}}</td>
+          {{#if admin1Real}}
+          <td>{{admin1Real.nombre}}</td>
+          {{else}}
+          <td>nel</td>
+          {{/if}}
+
           <td></td>
         </tr>
-
         <tr>
           <td><b>Pais:</b></td>
           <td>{{housing-unit.pais}}</td>
