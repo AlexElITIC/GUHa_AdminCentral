@@ -8,4 +8,5 @@ export default DS.Model.extend({
     telefono: DS.attr('string'),
     email: DS.attr('string'),
     direccion: DS.attr('string'),
+    imageUrl:DS.attr('string'),
 });

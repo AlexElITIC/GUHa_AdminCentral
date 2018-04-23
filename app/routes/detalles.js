@@ -2,6 +2,6 @@ import Route from '@ember/routing/route';
 
 export default Route.extend({
   model(params){
-    return this.store.peekRecord('housing-unit',params.id)
+    return this.store.findRecord('unit',params.id)
   }
 });

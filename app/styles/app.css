@@ -31,3 +31,9 @@ body {
   width: 500px;
   height: 500px;
 }
+#imagen{
+  margin-right: 3%;
+  margin-left: 3%;
+  margin-top: 1%;
+  padding-bottom: 5%;
+}

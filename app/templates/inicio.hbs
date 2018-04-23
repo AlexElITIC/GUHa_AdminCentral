@@ -4,28 +4,44 @@
       <div class="row">
 
         <div class="input-field col s9">
-          <i class="material-icons prefix">search</i>
 
-          <input type="text" id="autocomplete-input" class="autocomplete">
 
-          <label for="autocomplete-input">Busqueda de unidad</label>
+          {{#power-select
+            options=listaUnidades
+            searchPlaceholder="escribir nombre"
+            placeholder="buscar unidad"
+            selected=selectedUnit
+              searchField="nombre"
+            onchange=(action (mut selectedUnit))
+            as |unit|
+          }}
+            {{unit.nombre}}
+          {{/power-select}}
+
         </div>
         <div class="input-field col s3">
-<a class="waves-effect waves-light btn #0091ea light-blue accent-4"><i class="material-icons left">send</i>buscar</a>
+<a class="waves-effect waves-light btn #0091ea light-blue accent-4"{{action 'clean' selectedUnit}}><i class="material-icons left">send</i>limpiar</a>
         </div>
       </div>
     </div>
   </div>
 </div>
 
-
+{{log model}}
 <div class="container">
+  {{#if selectedUnit.nombre}}
+  {{tarjeta-unidad unit=selectedUnit goDetails=(action 'goDetails') edit=(action 'edit')}}
+  {{else}}
+
   {{#each model as |unidad|}}
   {{log unidad.admin1.nombre}}
   {{#if unidad.nombre}}
-  {{tarjeta-unidad housing-unit=unidad goDetails=(action 'goDetails') edit=(action 'edit')}}
+  {{tarjeta-unidad unit=unidad goDetails=(action 'goDetails') edit=(action 'edit')}}
   {{/if}}
   {{else}}
   <h2>no hay registros :(</h2>
   {{/each}}
+
+  {{/if}}
+
 </div>

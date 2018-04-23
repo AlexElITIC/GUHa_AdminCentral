@@ -1,7 +1,12 @@
 <div class="col s4">
       <div class="card">
         <div class="card-image">
-          <img src="http://www.thepixelfarm.co.uk/wp-content/uploads/2016/05/admin_v01D_support.png">
+          {{#if administrator.imageUrl}}
+                <img id="output" src={{administrator.imageUrl}} height="250" width="250" hidden={{shouldHideImage}}>
+                {{else}}
+                <img src="http://www.thepixelfarm.co.uk/wp-content/uploads/2016/05/admin_v01D_support.png">
+              {{/if}}
+
           <a class="btn-floating halfway-fab waves-effect waves-light light-blue" {{action 'edit' administrator}}><i class="material-icons">create</i></a>
         </div>
         <div class="card-content">

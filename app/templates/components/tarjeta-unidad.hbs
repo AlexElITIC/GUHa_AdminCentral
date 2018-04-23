@@ -1,8 +1,19 @@
 <div class="col s6">
  <div class="card horizontal #b3e5fc light-blue lighten-4">
-   <div class="card-image small">
-     <h3 align="center">{{housing-unit.nombre}}</h3>
-     <img src="http://s03.s3c.es/imag/_v0/635x300/6/9/0/unidad-habitacional-635.jpg">
+   <div class="card-image small" id="imagen">
+     <h3 align="center">{{unit.nombre}}</h3>
+
+     <div class="col s12">
+       <div class="form-group">
+         <div class="col-sm-10">
+           {{#if unit.imageUrl}}
+             <img id="output" src={{unit.imageUrl}} height="250" width="585" hidden={{shouldHideImage}}>
+             {{else}}
+             <h6> No hay imagen disponible </h6>
+           {{/if}}
+         </div>
+       </div>
+     </div>
 
    </div>
    <div class="card-stacked">
@@ -11,41 +22,46 @@
       <tbody>
         <tr>
           <td><b>Administrador(es):</b></td>
-          {{#if admin1Real}}
-          <td>{{admin1Real.nombre}}</td>
+          {{#if unit.admin1Obj.nombre}}
+          <td>{{unit.admin1Obj.nombre}}</td>
           {{else}}
-          <td>nel</td>
+          <td>no hay administrador</td>
           {{/if}}
 
-          <td></td>
+
+            {{#if unit.admin2Obj.nombre}}
+            <td>{{unit.admin2Obj.nombre}}</td>
+            {{else}}
+            <td>no hay administrador</td>
+            {{/if}}
         </tr>
         <tr>
           <td><b>Pais:</b></td>
-          <td>{{housing-unit.pais}}</td>
+          <td>{{unit.pais}}</td>
           <td></td>
         </tr>
         <tr>
           <td><b>Estado:</b></td>
-          <td>{{housing-unit.estado}}</td>
+          <td>{{unit.estado}}</td>
           <td></td>
         </tr>
         <tr>
           <td><b>Municipio:</b></td>
-          <td>{{housing-unit.municipio}}</td>
+          <td>{{unit.municipio}}</td>
           <td></td>
         </tr>
         <tr>
           <td><b>Colonia:</b></td>
-          <td>{{housing-unit.colonia}}</td>
+          <td>{{unit.colonia}}</td>
           <td></td>
         </tr>
       </tbody>
     </table>
      </div>
      <div class="card-action">
-       <a class="waves-effect waves-light btn #0091ea light-blue accent-4" {{action 'goDetails' housing-unit}}>Detalles</a>
-       <a class="waves-effect waves-light btn #0091ea light-blue accent-4" {{action 'edit' housing-unit}}>Editar</a>
-       <a class="btn-floating btn-large waves-effect waves-light red" {{action 'borrarUnidad' housing-unit}}><i class="material-icons">delete</i></a>
+       <a class="waves-effect waves-light btn #0091ea light-blue accent-4" {{action 'goDetails' unit}}>Detalles</a>
+       <a class="waves-effect waves-light btn #0091ea light-blue accent-4" {{action 'edit' unit}}>Editar</a>
+       <a class="btn-floating btn-large waves-effect waves-light red" {{action 'borrarUnidad' unit}}><i class="material-icons">delete</i></a>
      </div>
    </div>
  </div>

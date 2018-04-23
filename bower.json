@@ -1,0 +1,21 @@
+{
+  "name": "adn-central",
+  "description": "Small description for adn-central goes here",
+  "main": "",
+  "authors": [
+    "AlexElITIC <A01271558@itesm.mx>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/AlexElITIC/GUHa_AdminCentral",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "materialize": "^0.100.2"
+  }
+}
