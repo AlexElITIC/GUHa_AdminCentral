@@ -4,8 +4,6 @@
       <div class="row">
 
         <div class="input-field col s9">
-
-
           {{#power-select
             options=listaUnidades
             searchPlaceholder="escribir nombre"
@@ -17,10 +15,9 @@
           }}
             {{unit.nombre}}
           {{/power-select}}
-
         </div>
         <div class="input-field col s3">
-<a class="waves-effect waves-light btn #0091ea light-blue accent-4"{{action 'clean' selectedUnit}}><i class="material-icons left">send</i>limpiar</a>
+<a class="waves-effect waves-light btn #0091ea light-blue accent-4"{{action 'clean'}}><i class="material-icons left">send</i>limpiar</a>
         </div>
       </div>
     </div>
@@ -32,7 +29,6 @@
   {{#if selectedUnit.nombre}}
   {{tarjeta-unidad unit=selectedUnit goDetails=(action 'goDetails') edit=(action 'edit')}}
   {{else}}
-
   {{#each model as |unidad|}}
   {{log unidad.admin1.nombre}}
   {{#if unidad.nombre}}

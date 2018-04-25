@@ -19,7 +19,7 @@ export default Component.extend({
 				var metadata = {
 	 				contentType: 'image/png'
 	 			};
-				var storageRef = this.get('firebaseApp').storage().ref();
+				var storageRef = this.get('firebase').storage().ref();
 	 			var path = 'images/distribuidos/' + this.get('myModel.id') + '.png';
 	 			var uploadTask = storageRef.child(path).put(this.get('file'), metadata);
 	 			uploadTask.on('state_changed', function(snapshot){

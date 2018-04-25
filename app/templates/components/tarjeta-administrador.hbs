@@ -2,7 +2,7 @@
       <div class="card">
         <div class="card-image">
           {{#if administrator.imageUrl}}
-                <img id="output" src={{administrator.imageUrl}} height="250" width="250" hidden={{shouldHideImage}}>
+                <img id="output" src={{administrator.imageUrl}} height="320" width="320" hidden={{shouldHideImage}}>
                 {{else}}
                 <img src="http://www.thepixelfarm.co.uk/wp-content/uploads/2016/05/admin_v01D_support.png">
               {{/if}}
@@ -26,10 +26,6 @@
              <td><b>Direccion:</b></td>
              <td>{{administrator.direccion}}</td>
            </tr>
-           <tr>
-             <td><b>Administrador de:</b></td>
-             <td></td>
-           </tr>
          </tbody>
        </table></div>
         <div class="card-action">
@@ -38,3 +34,4 @@
 </div>
       </div>
     </div>
+  

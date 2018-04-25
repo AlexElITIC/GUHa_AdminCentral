@@ -31,8 +31,8 @@ export default Controller.extend(FindQuery, {
     edit(unit){
       this.transitionToRoute('editar',unit.get('id'))
     },
-    clean(unit){
-      this.set(this.get('selectedUnit'),null);
+    clean(){
+      this.set('selectedUnit',undefined);
     }
   },
   listaProductos: computed('name',function() {
