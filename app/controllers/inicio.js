@@ -8,16 +8,21 @@ export default Controller.extend(FindQuery, {
   listaUnidad: computed(function() {
 		return this.get('store').findAll('unit')
 	}),
-  listaUnidades: computed(function() {
-    let unitList = [];
 
-			return this.get('store').findAll('unit').then((unidades)=>{
-					unidades.forEach((unit)=>{
-						unitList.pushObject(unit)
-					})
-					return unitList;
-			})
+  listaUnidades: computed(function () {
+    return this.get('store').findAll('unit');
   }),
+
+  // listaUnidades: computed(function() {
+  //   let unitList = [];
+  //
+	// 		return this.get('store').findAll('unit').then((unidades)=>{
+	// 				unidades.forEach((unit)=>{
+	// 					unitList.pushObject(unit)
+	// 				})
+	// 				return unitList;
+	// 		})
+  // }),
   selectedUnit: computed(function(){
     if(this.get('model')){
     return this.get('model')}

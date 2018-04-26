@@ -2,6 +2,7 @@ import Component from '@ember/component';
 import EmberObject, { computed } from '@ember/object';
 import FindQuery from 'ember-emberfire-find-query/mixins/find-query';
 import { inject as service } from "@ember/service";
+import { isNone } from '@ember/utils';
 export default Component.extend({
   session: Ember.inject.service(),
   store: service(),
@@ -44,12 +45,21 @@ export default Component.extend({
 
  		},
     guardarAdmin(admin){
-      this.get('firebase').auth().createUserWithEmailAndPassword(admin.get('email'), this.get('password')).then((user)=>{
-        admin.set('uid',user.uid);
+      console.log(admin)
+      if (isNone(admin.get('uid'))) {
+        this.get('firebase').auth().createUserWithEmailAndPassword(this.get('email'), this.get('password')).then((user)=>{
+          admin.set('email',this.get('email'));
+          admin.set('uid',user.uid);
+          admin.save().then(()=>{
+            this.sendAction('guardarAdmin',admin)
+          })
+  })
+      }
+      else {
         admin.save().then(()=>{
           this.sendAction('guardarAdmin',admin)
         })
-})
+      }
 
     }
   }

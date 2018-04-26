@@ -34,12 +34,31 @@
 
     </tr>
     <tr>
-      <td><b>Fecha de contrato</b></td>
-      <td>{{model.fechaDeContrato}}</td>
+      <td><b>Administrador(es)</b></td>
+      <td></td>
+    </tr>
 
+    <tr>
+      <td><b>{{model.admin1Obj.nombre}} {{model.admin1Obj.apellidoPaterno}} {{model.admin1Obj.apellidoMaterno}}</b> <br>{{model.admin1Obj.email}}
+      <br>{{model.admin1Obj.telefono}} <br>{{model.admin1Obj.direccion}} </td>
+      <td><b>{{model.admin2Obj.nombre}} {{model.admin2Obj.apellidoPaterno}} {{model.admin2Obj.apellidoMaterno}}</b> <br>{{model.admin2Obj.email}}
+      <br>{{model.admin2Obj.telefono}} <br>{{model.admin2Obj.direccion}} </td>
+    </tr>
+
+    <tr>
+      <td><a class="waves-effect waves-light btn #0091ea light-blue accent-4" {{action 'edit' model}}>Editar</a></td>
+      <td><a class="btn-floating btn-large waves-effect waves-light red" {{action 'borrarUnidad' model}}><i class="material-icons">delete</i></a></td>
     </tr>
   </tbody>
 </table>
+      </div>
+      <div class="col s12">
+        <h3>Vista</h3>
+        {{#if model.imageUrl}}
+        <img id="output" src={{model.imageUrl}} height="400" width="400" hidden={{shouldHideImage}} class="imagen">
+        {{else}}
+        <img src="http://www.thepixelfarm.co.uk/wp-content/uploads/2016/05/admin_v01D_support.png" height="400" width="400" class="imagen">
+        {{/if}}
       </div>
       </div>
     </div>
