@@ -4,16 +4,6 @@ import FindQuery from 'ember-emberfire-find-query/mixins/find-query';
 import { computed } from '@ember/object';
 
 export default Controller.extend(FindQuery, {
-  /*listaAdmin: computed(function() {
-    let AdminList = [];
-
-			return this.get('store').findAll('administrator').then((admins)=>{
-					admins.forEach((administrator)=>{
-						AdminList.pushObject(administrator)
-					})
-					return AdminList;
-			})
-  }),*/
   listaAdmin: computed(function () {
     return this.get('store').findAll('administrator');
   }),

@@ -9,13 +9,11 @@ export default Component.extend({
   firebase: service('firebaseApp'),
   actions:{
     SelectImage(files){
-      console.log('entrando')
 			let ctrl = this;
 			let reader = new FileReader();
 			reader.onloadend = Ember.run.bind(this, function(){
 				var dataURL = reader.result;
 				var output = document.getElementById('output');
-				// output.src = dataURL;
 				this.set('file', files[0]);
 				var metadata = {
 	 				contentType: 'image/png'
@@ -34,12 +32,11 @@ export default Component.extend({
 						ctrl.get('model').save()
 						ctrl.set('file', '');
 						ctrl.set('selectedCategory', '');
-						// ctrl.set(document.getElementById('output').src, '');
 						ctrl.set('days', '');
 						ctrl.set('isDisabled', true);
 	 				});
 			})
-			//debugger;
+			
 			reader.readAsDataURL(files[0]);
  			console.log(this.get('file'))
 

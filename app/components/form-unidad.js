@@ -74,7 +74,6 @@ export default Component.extend(FindQuery, {
     						ctrl.get('model').save()
     						ctrl.set('file', '');
     						ctrl.set('selectedCategory', '');
-    						// ctrl.set(document.getElementById('output').src, '');
     						ctrl.set('days', '');
     						ctrl.set('isDisabled', true);
     	 				});

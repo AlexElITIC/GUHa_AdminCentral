@@ -26,13 +26,13 @@
           <label for="telefono">telefono</label>
         </div>
        {{#unless model.email}}
-       
+
         <div class="input-field col s12">
-          {{input id="correo" type="text" class="validate" value=email}}
+          {{input id="email" type="email" class="validate" value=email}}
           <label for="correo">correo</label>
         </div>
         <div class="input-field col s12">
-          {{input id="password" type="text" class="validate" value=password}}
+          {{input id="password" type="password" class="validate" value=password}}
           <label for="password">password</label>
         </div>
         {{/unless}}

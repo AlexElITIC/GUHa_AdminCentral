@@ -12,17 +12,6 @@ export default Controller.extend(FindQuery, {
   listaUnidades: computed(function () {
     return this.get('store').findAll('unit');
   }),
-
-  // listaUnidades: computed(function() {
-  //   let unitList = [];
-  //
-	// 		return this.get('store').findAll('unit').then((unidades)=>{
-	// 				unidades.forEach((unit)=>{
-	// 					unitList.pushObject(unit)
-	// 				})
-	// 				return unitList;
-	// 		})
-  // }),
   selectedUnit: computed(function(){
     if(this.get('model')){
     return this.get('model')}
@@ -44,7 +33,6 @@ export default Controller.extend(FindQuery, {
     let context = this;
     return new Promise(function (resolve, reject){
     					context.filterContains(context.get('store'), 'unit', { 'nombre':context('name')}, function(unidades){
-    						//console.log(mprima[0])
     						return resolve(unidades)
     	})
     })

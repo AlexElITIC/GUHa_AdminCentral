@@ -8,10 +8,10 @@
 
           {{#power-select
             options=listaAdmin
-            searchPlaceholder="escribir nombre"
+            searchPlaceholder="escribir email"
             placeholder="buscar Admin"
             selected=selectedAdmin
-              searchField="nombre"
+              searchField="email"
             onchange=(action (mut selectedAdmin))
             as |admin|
           }}
